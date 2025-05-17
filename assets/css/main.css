@@ -1,36 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+} /* Selector Universal -> Tiene el mismo valor que un elemento (001) pero menos jerarquia en cascada
+    General para todo el proyecto, solo usarlo para resetar estilos de navegador -> Bajo rendimiento
+*/
+
+
+:root {
+    /*Vraibles en CSS*/
+    --primary-color: #00b46f;
+
+    --secondary-color: #ff0303;
+
+    --neutral-dark-color: #14141c;
+    --neutral-light-color: #fffbfb;
+    --neutral-gray-color: #8f7f7f;
+
+
+    --margin-small: .5rem;
+    --font-size-small: 1rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+
+    --title-font-size: 3rem;
+
+    --title-font-family: 'Bitter', 'sans-serif';
+    --body-font-family: 'Roboto', 'sans-serif';
+} /* Siempre gana, más especifico -> psudo Clase 0 1 0 */ 
+
+html {
+
+} /* Llama al elemento o etiqueta o tipo -> Especificad es de 0 0 1
+    Muy raro que se ocupe. Sirve para ajuste globales
+*/
+
+/* 1 rem => 16 px*/
+
 h1 {
-    color: red;
-    text-align: center;
+    font-family: var(--title-font-family);
 }
 
+body {
+    font-family: var(--body-font-family);
+}
 
-section {
-    background-color: lightblue;
+.padre {
+    background-color: var(--primary-color);
     padding: 20px;
 }
 
-h2 {
-    color: darkblue;
-    font-size: 24px;
+.hijo {
+    background-color: var(--secondary-color);
 }
 
-.about-section {
-    background-color: blueviolet;
-}
-
-
-.text-red {
-    color: red;
-}
-
-.text-light {
-    color: aliceblue;
+.hijo p {
+    font-size: 2rem;
 }
 
 
-#login {
-    background-color: blue;
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    background-color: var(--neutral-dark-color);
+
+    border-radius: 15px;
+    box-shadow: 0px 0px 10px var(--neutral-gray-color);
+    padding: 20px;
+
+    width: 300px;
+
+    transition: 0.3s; 
+}
+
+.card .card__header img {
+    width: 80%;
+    height: auto;
+
+    border-radius: 50%;
+}
+
+.card .card__body img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.card__body {
+    font-size: 20px;
+    background-color: var(--secondary-color);
+}
+
+
+.card h4 {
+    font-size: 32px;
+    text-align: center;
+
+    font-weight: 700;
+}
+
+.card, .card__body span {
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+
+    color: var(--neutral-gray-color)
+}
+
+
+.card__header {
+    margin-bottom: 40px;
+}
+
+.card .inline-paragraphs {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    width: 100%
+}
+
+.ms-1 {
+    margin-left: 16px;
+}
+
+.mb-5 {
+    margin-bottom: 50px; 
+}
+
+.card:hover {
+    transform: scale(1.02);
+    box-shadow: 0px 0px 20px var(--primary-color);
+}
+
+
+/*
+Unidades de medida absolutas: 
+- px: píxeles
+- cm: centímetros
+- mm: milímetros
+- in: pulgadas
+- pt: puntos (1/72 de pulgada)
+
+Unidades de medida relativas: 
+- em -> Relativo al tamaño del padre
+- rem -> Relativa al tamaño de la raíz
+- porcentajes
+- vw: viewport width (ancho de la ventana del navegador)
+- vh: viewport height (alto de la ventana del navegador)
+
+*/
+
+
+
 /* 
 #login-text {
     color: red;
@@ -43,7 +185,7 @@ Especificidad en CSS:
 Valor 3 - 4 valores asociados
 
 A B C D
-  0 0 0
+0 0 0 0
 
 estilo en linea : 1 0 0 0 -> Más específico que cualquier otro selector
 ID : 0 1 0 0 -> Más especifico de los selectores convencionales
