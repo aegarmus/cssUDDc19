@@ -1,0 +1,55 @@
+h1 {
+    color: red;
+    text-align: center;
+}
+
+
+section {
+    background-color: lightblue;
+    padding: 20px;
+}
+
+h2 {
+    color: darkblue;
+    font-size: 24px;
+}
+
+.about-section {
+    background-color: blueviolet;
+}
+
+
+.text-red {
+    color: red;
+}
+
+.text-light {
+    color: aliceblue;
+}
+
+
+#login {
+    background-color: blue;
+}
+/* 
+#login-text {
+    color: red;
+} */
+
+
+/* 
+Especificidad en CSS:
+
+Valor 3 - 4 valores asociados
+
+A B C D
+  0 0 0
+
+estilo en linea : 1 0 0 0 -> Más específico que cualquier otro selector
+ID : 0 1 0 0 -> Más especifico de los selectores convencionales
+class: 0 0 1 0 -> Más especifico que los selectores de etiqueta (tambien llamados de elemento o tipo) pero menos que el ID
+Etiqueta/tipo/elemento: 0 0 0 1 -> Menos especifico que los selectores de clase y ID
+*/
+
+
+/* Deprecado: Un elemento o recurso que ya no tiene mantenimiento, soporte o desarrollo activo. */
